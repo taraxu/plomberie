@@ -1,0 +1,79 @@
+a {
+	text-decoration: none;
+	font-family: 'Maven Pro', sans-serif;
+	font-size: 1.5em;
+	color: red;
+}
+.generalinfo {
+	background-image: url(../instructions/background6.jpg);
+	background-size: cover;
+	color: white;
+	text-align: center;
+	font-family: 'Maven Pro', sans-serif;
+	padding-bottom: 100px;
+}
+h1 {
+	font-size: 3.5em;
+	margin-top: 0;
+}
+.generalinfo>img {
+	margin: 100px auto 0;
+}
+.generalinfo>p {
+	font-size: 2em;
+	margin: 0;
+}
+nav {
+	background-color: red;
+	text-align: center;
+	padding: 10px;
+}
+nav a {
+	padding: 40px;
+	color: white;
+}
+.nosservices {
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 10px;
+	margin-top: 20px;
+	text-align: center;
+}
+.service {
+	border:1px solid black;
+	border-radius: 5px;
+	padding: 50px 200px;
+	margin: 50px 100px;
+	display: inline-block;
+}
+h2 {
+	text-align: left;
+}
+.slider {
+	display: inline-flex;
+	margin: 20px;
+	justify-content: space-between;
+}
+.slider img {
+	width: 45%;
+	height: 45%;
+	margin: 20px 50px;
+}
+form {
+	margin: 10px 40px 100px;
+}
+input {
+	padding: 10px 20px 20px 5px;
+	margin: 10px auto;
+	border-radius: 5px;
+}
+button {
+	padding: 10px 20px;
+	border-radius: 5px;
+}
+
+
+
+
+
+
