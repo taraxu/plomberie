@@ -51,7 +51,7 @@
         <input type="text" name="lastname" placeholder="Nom" required><br>
         <input type="text" name="zipcode" placeholder="Code postal" pattern="[0-9]{5}"required><br>
         <input type="mail" name="mail" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,5}$" required><br>
-        <textarea cols="100" rows="4" name="message" placeholder="Message" required></textarea><br>
+        <textarea cols="100" rows="4" name="content" placeholder="Message" required></textarea><br>
         <input type="submit" value="envoyer">
     </form>
 
@@ -66,24 +66,42 @@
         die('Erreur : '.$e->getMessage());
     }
         if(count($_POST) >0 ) {
-            var_dump($_POST);
-            //$post = trim($_POST);
+            //var_dump($_POST);
+
+            //Traiter le formulaire...
+
+            //inserer les infos dans la table "writers" pour générer la "writer_id "
             if (is_array($_POST)) {
                 $result3 = $bdd->prepare('INSERT INTO writers (firstname, lastname, zipcode, mail) VALUES(?, ?, ?, ?)');
-                $result3->execute(array($_POST['firstname'], $_POST['lastname'], $_POST['zipcode'], $_POST['mail']));
+                $donnes3 = $result3->execute(array($_POST['firstname'], $_POST['lastname'], $_POST['zipcode'], $_POST['mail']));
 
+                //var_dump($donnes3);
+
+
+            //Capter la "writer_id"
                 $mail = $_POST['mail'];
-                $result2 = $bdd->prepare('SELECT writer_id FROM writers WHERE mail = $mail' );
-               // var_dump($mail);
+                $result2 = $bdd->prepare("SELECT writer_id FROM writers WHERE mail = '$mail'");
+                //var_dump($mail);
                 $result2->execute();
-                var_dump($result2);
-                $writer_idvalue = $result2->fetch();
+                $donnes2 = $result2->fetch();
+                //var_dump($donnes2);
+
+                foreach ($donnes2 as $k => $v){
+                   // echo $v;
+                }
+                $writer_idvalue = intval($v);
                 //var_dump($writer_idvalue);
 
-                $result = $bdd->prepare("DECLARE @id as int; set @id = SELECT writer_id FROM writers WHERE mail = $mail INSERT INTO messages (content, writer_id) VALUES(?, @id)");
-                $result->execute(array($_POST['content']), $writer_idvalue);
+            //inserer les infos dans la table "messages" avec la "writer_id"
+                $result = $bdd->prepare('INSERT INTO messages (content, writer_id) VALUES(?, ?)');
+                $donnes = $result->execute(array($_POST['content'], $writer_idvalue));
 
-                header('Location: ./');
+                //var_dump($writer_idvalue);
+                //var_dump($_POST['content']);
+                //var_dump($donnes);
+
+
+                //header('Location: ./');
            }
         }
     ?>
