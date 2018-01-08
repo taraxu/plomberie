@@ -4,6 +4,9 @@ a {
 	font-size: 1.5em;
 	color: red;
 }
+a:hover {
+	color: #064579;
+}
 .generalinfo {
 	background-image: url(../instructions/background6.jpg);
 	background-size: cover;
@@ -27,6 +30,12 @@ nav {
 	background-color: red;
 	text-align: center;
 	padding: 10px;
+	position: fixed;
+	z-index: 1;
+	top: 0; /*stay on top*/
+	height: auto; /* Full-height: remove this if you want "auto" height */
+    width: 100%; /* Set the width of the sidebar */
+
 }
 nav a {
 	padding: 40px;
@@ -45,6 +54,24 @@ nav a {
 	padding: 50px 200px;
 	margin: 50px 100px;
 	display: inline-block;
+}
+.floatIcon {
+	height: auto;
+	width: 7%;
+	bottom: 0;
+	right: 0;
+	text-align: center;
+	display: inline-block;
+	position: fixed;
+}
+.floatIcon a {
+	font-size: 1em;
+	width: 160px;
+}
+
+.maincontent {
+	display: inline-block;
+	width: 90%;
 }
 h2 {
 	text-align: left;
