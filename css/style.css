@@ -76,15 +76,20 @@ nav a {
 h2 {
 	text-align: left;
 }
+
 .slider {
-	display: inline-flex;
-	margin: 20px;
-	justify-content: space-between;
-}
-.slider img {
 	width: 45%;
-	height: 45%;
-	margin: 20px 50px;
+	height: 300px;
+	margin:20px;
+	overflow: hidden;
+	display: inline-block;
+}
+
+.slider ul li {
+	width:500px;
+	height:300px;
+	list-style: none;
+	overflow: hidden;
 }
 form {
 	margin: 10px 40px 100px;

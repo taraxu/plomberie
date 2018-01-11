@@ -4,8 +4,9 @@
     <meta charset="utf-8" lang="fr">
     <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
     <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="icon" type="image/x-icon" href="instructions/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>monplombierbienaime</title>
     <!--<base href="localhost:8888/projet/index.php">!-->
 </head>
@@ -41,15 +42,23 @@
     		<div class="service"></div>
     		<div class="service"></div>		
     	</section>
-
     	<h2><a href="ateliers.php" id="ateliers">Ateliers</a></h2>
     	<section> <!-- sliders!-->
-    		<div class="slider">
-    		<img src="" alt="sliders-1">
-    		<img src="" alt="sliders-2">
-    		</div>
-    		
-    	</section>
+            <div class="slider">
+                <ul>
+                    <li><img src="instructions/slider1.jpg" alt="slider1"></li>
+                    <li><img src="instructions/slider2.jpg" alt="slider2"></li>
+                    <li><img src="instructions/slider3.jpg" alt="slider3"></li>
+                </ul>
+            </div>
+            <div class="slider">
+                <ul>
+                    <li><img src="instructions/slider2.jpg" alt="slider2"></li>
+                    <li><img src="instructions/slider3.jpg" alt="slider3"></li>
+                    <li><img src="instructions/slider1.jpg" alt="slider1"></li>
+                </ul>
+            </div>
+       	</section>
         <h2><a href="contacts.php" id="contacts">Contacts</a></h2>
         <form action="index.php" method="post">
             <input type="text" name="firstname" placeholder="Prénom" required><br>
@@ -119,6 +128,6 @@
 		<p>Devis gratuit</p>
 		<p>Par tél : 01 23 45 67 89</p>
 </footer>
-<script type="text/javascript" src="sliders.js"></script>
+--<script type="text/javascript" src="sliders.js"></script>
 </body>
 </html>
