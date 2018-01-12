@@ -78,18 +78,21 @@ h2 {
 }
 
 .slider {
-	width: 45%;
-	height: 300px;
-	margin:20px;
-	overflow: hidden;
-	display: inline-block;
+    width: 45%;
+    height: 300px;
+    margin:20px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
 }
-
+.slider ul {
+	position: absolute; 
+}
 .slider ul li {
-	width:500px;
-	height:300px;
-	list-style: none;
-	overflow: hidden;
+    float: left;
+    width:500px;
+    height:300px;
+    list-style: none;
 }
 form {
 	margin: 10px 40px 100px;
