@@ -31,7 +31,7 @@ nav {
 	text-align: center;
 	padding: 10px;
 	position: fixed;
-	z-index: 1;
+	z-index: 3;
 	top: 0; /*stay on top*/
 	height: auto; /* Full-height: remove this if you want "auto" height */
     width: 100%; /* Set the width of the sidebar */
@@ -57,12 +57,12 @@ nav a {
 }
 .floatIcon {
 	height: auto;
-	width: 7%;
-	bottom: 0;
-	right: 0;
+	width: 120px;
 	text-align: center;
-	display: inline-block;
 	position: fixed;
+	right: 20px;
+	bottom: 0;
+	z-index: 4
 }
 .floatIcon a {
 	font-size: 1em;
@@ -70,30 +70,45 @@ nav a {
 }
 
 .maincontent {
-	display: inline-block;
 	width: 90%;
 }
 h2 {
 	text-align: left;
 }
 
-.slider {
-    width: 45%;
+#slider {
+    width: 100%;
     height: 300px;
     margin:20px;
     overflow: hidden;
     position: relative;
-    display: inline-block;
+    z-index: 1;
 }
-.slider ul {
-	position: absolute; 
+#slider ul {
+	position: absolute;
+	left: 0; 
 }
-.slider ul li {
+#slider ul li {
     float: left;
-    width:500px;
-    height:300px;
     list-style: none;
 }
+#button {
+	/*background-image: url(../instructions/button4.jpg) ;
+	background-size: cover;*/
+	background-color: white;
+	width: 10%;
+	height: 300px;
+	position: relative;
+	
+ 	/*border-top: 300px solid red;
+ 	border-left: 70px solid blue;
+ 	border-right: 70px solid green;*/
+	left: 600px;
+	z-index: 2;
+	position: absolute;
+	opacity: 1;
+}
+
 form {
 	margin: 10px 40px 100px;
 }
@@ -105,6 +120,9 @@ input {
 button {
 	padding: 10px 20px;
 	border-radius: 5px;
+	position: relative;
+	z-index: 2;
+	opacity: 0;
 }
 
 

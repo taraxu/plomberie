@@ -9,33 +9,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>monplombierbienaime</title>
     <!--<base href="localhost:8888/projet/index.php">!-->
-  
- 
-  
-    <script type="text/javascript">  
-    window.onload = function(){  
-
-        var infoSlider=document.getElementsByClassName('slider'); 
-        console.log('pb') ;
-        var infoUl=infoSlider.getElementsByTagName('ul')[0];  
-        alert('slider'); 
-        var infoImage=infoUl.getElementsByTagName('li');  
-      
-        infoUl.innerHTML=infoUl.innerHTML+infoUl.innerHTML;//变成两副图，然后才能实现无缝滚动  
-      
-        infoUl.style.width=infoImage[0].offsetWidth*infoImage.length+'px';//随便获取一个li的宽度，这里用第一个代表计算出ul的长度  
-        setInterval(function(){  
-            if(infoUl.offsetLeft<-infoUl.offsetWidth/2){//offsetLeft是负数，而offsetWidth是一个最小大于0的数，所以加个-号才能进行比较  
-                infoUl.style.left='0';//当所有图片滚动完之后将left设置为0意味着后面无缝地接着第一张图片，这个过程如果看见两副图片就会看见有些变化，但实际上只会看见一副，所以几乎没有变化  
-                alert('slider'); 
-             }
-            infoUl.style.left=infoUl.offsetLeft-2+'px';//每次向左移动2px  
-            
-        },50);  
-
-
-    };
-    </script>
 </head>
 
 <body>
@@ -71,20 +44,19 @@
         	</section>
         	<h2><a href="ateliers.php" id="ateliers">Ateliers</a></h2>
         	<section> <!-- sliders!-->
-                <div class="slider">
+                <div id="button">
+                    
+                </div>
+                <div id="slider">
                     <ul>
                         <li><img src="instructions/slider1.jpg" alt="slider1"></li>
                         <li><img src="instructions/slider2.jpg" alt="slider2"></li>
                         <li><img src="instructions/slider3.jpg" alt="slider3"></li>
                     </ul>
                 </div>
-                <div class="slider">
-                    <ul>
-                        <li><img src="instructions/slider1.jpg" alt="slider1"></li>
-                        <li><img src="instructions/slider2.jpg" alt="slider2"></li>
-                        <li><img src="instructions/slider3.jpg" alt="slider3"></li>
-                    </ul>
-                </div>
+                
+
+
            	</section>
             <h2><a href="contacts.php" id="contacts">Contacts</a></h2>
             <form action="index.php" method="post">
@@ -93,7 +65,7 @@
                 <input type="text" name="zipcode" placeholder="Code postal" pattern="[0-9]{5}"required><br>
                 <input type="mail" name="mail" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,5}$" required><br>
                 <textarea cols="100" rows="4" name="content" placeholder="Message" required></textarea><br>
-                <input type="submit" value="envoyer">
+                <input type="submit" value="Envoyer">
             </form>
 
 
