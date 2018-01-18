@@ -1,5 +1,7 @@
-window.onload=function(){  
-    //var oDiv=document.getElementById('slider');  
+var sliderMove;
+//creer function startSlider
+function startSlider(){
+
     var infoUl=document.getElementsByTagName('ul')[0]; 
     //console.log(infoUl); 
     var infoLi=document.getElementsByTagName('li');  
@@ -8,12 +10,26 @@ window.onload=function(){
     //console.log(infoUl.innerHTML);
   
     infoUl.style.width=infoLi[0].offsetWidth*infoLi.length+'px';//随便获取一个li的宽度，这里用第一个代表计算出ul的长度  
-    setInterval(function(){  
+        sliderMove = setInterval(function(){  
         if(infoUl.offsetLeft <= -infoUl.offsetWidth/2){ //comparer le offsetLeft avec le slider visible
-            infoUl.style.left='0';//当所有图片滚动完之后将left设置为0意味着后面无缝地接着第一张图片 
+            infoUl.style.left='0';//recommence par la première image
         }  
         infoUl.style.left=infoUl.offsetLeft-1+'px';//1px à gauche chaque movement  
   
-    },30);
+        },30);
+}; 
+//Creer function stopSlider et apeler la function quand clicker 'stop'
+document.getElementById('stop').addEventListener('click', stopSlider);
+function stopSlider() {
+    clearInterval(sliderMove);
 };
-    
+
+//apeler la function quand page est téléchargé (Automatique)
+window.onload=function(){
+    startSlider();
+};
+//apeler la function startSlider quand clicker'start'
+document.getElementById('start').addEventListener('click', startSlider);
+
+
+

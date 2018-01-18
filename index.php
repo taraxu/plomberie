@@ -17,7 +17,7 @@
             <a href="#">Accueil</a>
             <a href="#services">Nos services</a>
             <a href="#ateliers">Ateliers</a>
-            <a href="#contacts">Contacts</a>
+            <a href="#contacts">Nous contacter</a>
         </nav>
         <div class="generalinfo">
             <img src="instructions/logo3.png">
@@ -44,21 +44,22 @@
         	</section>
         	<h2><a href="ateliers.php" id="ateliers">Ateliers</a></h2>
         	<section> <!-- sliders!-->
-                <div id="button">
-                    
+                <div id='hideAera'>
+                    <p id="stop"><i class="fa fa-pause-circle-o fa-4x" aria-hidden="true"></i></p>
+                    <p id="start"><i class="fa fa-play-circle-o fa-4x" aria-hidden="true"></i></p>
                 </div>
                 <div id="slider">
-                    <ul>
-                        <li><img src="instructions/slider1.jpg" alt="slider1"></li>
-                        <li><img src="instructions/slider2.jpg" alt="slider2"></li>
-                        <li><img src="instructions/slider3.jpg" alt="slider3"></li>
+                    <ul id="sliderDetail">
+                        <li><img src="instructions/slider1.jpg" alt="slider1" id="image1"></li>
+                        <li><img src="instructions/slider2.jpg" alt="slider2" id="image2"></li>
+                        <li><img src="instructions/slider3.jpg" alt="slider3" id="image3"></li>
                     </ul>
                 </div>
                 
 
 
            	</section>
-            <h2><a href="contacts.php" id="contacts">Contacts</a></h2>
+            <h2><a href="contacts.php" id="contacts">Nous contacter</a></h2>
             <form action="index.php" method="post">
                 <input type="text" name="firstname" placeholder="Prénom" required><br>
                 <input type="text" name="lastname" placeholder="Nom" required><br>
