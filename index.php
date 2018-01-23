@@ -16,7 +16,7 @@
         <nav>
             <a href="#">Accueil</a>
             <a href="#services">Nos services</a>
-            <a href="#ateliers">Ateliers</a>
+            <a href="#chantiers">Nos chantiers</a>
             <a href="#contacts">Nous contacter</a>
         </nav>
         <div class="generalinfo">
@@ -26,33 +26,55 @@
             <p>Par tél : 01 23 45 67 89</p>
         </div>
     </header>
-    <main>
+    <main  class="maincontent">
         <div class="floatIcon">
             <a href="#contacts"><i class="fa fa-commenting-o fa-3x" aria-hidden="true"></i>
             <p>Envoyer un message</p>
             </a>
         </div>
-        <div class="maincontent">
+        <div>
         	<h2><a href="services.php" id="services">Nos Services</a></h2>
         	<section class="nosservices">
-        		<div class="service"></div>
-        		<div class="service"></div>
-        		<div class="service"></div>
-        		<div class="service"></div>
-        		<div class="service"></div>
-        		<div class="service"></div>		
+                <div class="service">
+                    <img src="instructions/service111.png">
+                    <h3>Plomberie</h3>
+                    <ul>
+                		<li>Dépannage plomberie</li>
+                		<li>Aménagement salle de bain et cuisine</li>
+                		<li>Traitement d'eau</li>
+                    </ul>
+                </div>
+                <div class="service">
+                    <img src="instructions/service22.png">
+                    <h3>Chauffage</h3>
+                    <ul>
+                        <li>Installation et remplacement de chaudière</li>
+                        <li>Installation de chauffage central(radiateur et plancher chauffant)</li>
+                    </ul>
+                </div>
+
+                <div class="service">
+                    <img src="instructions/service33.png">
+                    <h3>VMC</h3>
+                    <ul>
+                        <li>Ventilation(double flux)</li>
+                        <li>Traitement d'air</li>
+                        <li>Climatisation</li>
+                    </ul>
+                </div>
+		
         	</section>
-        	<h2><a href="ateliers.php" id="ateliers">Ateliers</a></h2>
+        	<h2><a href="chantiers.php" id="chantiers">Nos Chantiers</a></h2>
         	<section> <!-- sliders!-->
                 <div id='hideAera'>
                     <p id="stop"><i class="fa fa-pause-circle-o fa-4x" aria-hidden="true"></i></p>
                     <p id="start"><i class="fa fa-play-circle-o fa-4x" aria-hidden="true"></i></p>
                 </div>
                 <div id="slider">
-                    <ul id="sliderDetail">
-                        <li><img src="instructions/slider1.jpg" alt="slider1" id="image1"></li>
-                        <li><img src="instructions/slider2.jpg" alt="slider2" id="image2"></li>
-                        <li><img src="instructions/slider3.jpg" alt="slider3" id="image3"></li>
+                    <ul class="sliderDetail">
+                        <li class="sliderImg"><img src="instructions/slider1.jpg" alt="slider1"></li>
+                        <li class="sliderImg"><img src="instructions/slider2.jpg" alt="slider2"></li>
+                        <li class="sliderImg"><img src="instructions/slider3.jpg" alt="slider3"></li>
                     </ul>
                 </div>
                 
