@@ -1,35 +1,15 @@
 body {
 	box-sizing: border-box;
+	font-family: 'Maven Pro', sans-serif;
+
 }
 a {
 	text-decoration: none;
-	font-family: 'Maven Pro', sans-serif;
 	font-size: 1.5em;
 	color: red;
 }
 a:hover {
 	color: #064579;
-}
-.generalinfo {
-	height: 700px;
-	background-image: url(../instructions/background10.jpg);
-	background-size: cover;
-	background-color: #ffffff;
-	color: red;
-	text-align: center;
-	margin-bottom: 100px;
-	opacity: 0.9;
-}
-h1 {
-	font-size: 3.5em;
-	margin-top: 0;
-}
-.generalinfo>img {
-	margin: 100px auto 0;
-}
-.generalinfo>p {
-	font-size: 2em;
-	margin: 0;
 }
 nav {
 	background-color: red;
@@ -37,46 +17,67 @@ nav {
 	padding: 10px;
 	position: fixed;
 	z-index: 10;
-	top: 0; /*stay on top*/
-	height: auto; /* Full-height: remove this if you want "auto" height */
-    width: 100%; /* Set the width of the sidebar */
+	top: 0;
+	width: 100%;
+	height: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    opacity: 0.8;
 
 }
 nav a {
-	padding: 40px;
 	color: white;
+	margin: auto 5%;
 }
-/*.maincontent {
-	background-color: white;
-	position: relative;
-	z-index: 2;
-}*/
+#fa-bars {
+	display: none;
+}
+#dropMenu {
+	display: none;
+}
 
-/*.nosservices {
-	padding: 10px;
-	margin-top: 20px;
+.generalinfo {
+	background-image: url(../instructions/background10.jpg);
+	width: 100%;
+	height: 1000px;
 	text-align: center;
-}*/
-.service {
-	border:1px solid #aaaaaa;
-	border-radius: 50%;
-	width: 25%;
-	padding: 70px 30px;
-	margin: 25px;
-	display: inline-block;
-	font-family: 'Maven Pro', sans-serif;
-	text-align: center;
+	margin:0 auto;
+	position: fixed;
+	z-index: 0;
+	opacity: 0.8;
+	top: 0;
 }
-.service ul li{
-	text-align: left;
+
+h1 {
+	font-size: 3em;
+	padding-top: 0;
 }
-h3 {
+.generalinfo>img {
+	max-width: 5%;
+	margin: 0 auto;
+	padding-top: 5%;
+}
+.generalinfo>p {
 	font-size: 2em;
+	margin: 0;
+}
+.maincontent {
+	margin-top: 30%;
+	background-color: white;
+	position:relative;
+	z-index: 1;
+}
+h2 {
+	text-align: left;
+	color: #aaaaaa;
+	padding-top: 30px;
 }
 
 .floatIcon {
+	display: inline-block;
 	height: auto;
-	width: 120px;
+	max-width: 120px;
 	text-align: center;
 	position: fixed;
 	right: 20px;
@@ -87,19 +88,14 @@ h3 {
 	font-size: 1em;
 	width: 160px;
 }
-
-
-h2 {
-	text-align: left;
-	color: #aaaaaa;
-}
-
 #slider {
     /*width: 100%;*/
-    height: 350px;
+    height: 300px;
     overflow: hidden;
     position: relative;
-    z-index: 2;
+    z-index: 5;
+    margin-bottom: 50px;
+    margin-top: 50px;
 }
 #slider ul {
 	position: absolute;
@@ -112,14 +108,12 @@ h2 {
 }
 
 #hideAera {
-	/*background-image: url(../instructions/button4.jpg) ;
-	background-size: cover;*/
 	background-color: white;
 	width: 10%;
 	height: 350px;
 	position: relative;
-	left: 650px;
-	z-index: 3;
+	left: 45%;
+	z-index: 6;
 	position: absolute;
 	opacity: 1;
 }
@@ -141,25 +135,117 @@ h2 {
 	color: #162f42;
 
 }
+h3 {
+	font-size: 2em;
+}
+.nosservices {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.service {
+	margin: 50px 20px;
+	display: inline-block;
+	text-align: center;
+}
+.service img {
+	border:1px solid #aaaaaa;
+	border-radius: 100%;
+	padding: 5px;
+}
+.service ul li {
+	text-align: left;
+}
 
 form {
-	margin: 10px 40px 100px;
+	margin-bottom: 300px;
 }
 input {
 	padding: 10px 20px 20px 5px;
 	margin: 10px auto;
 	border-radius: 5px;
 }
-button {
-	padding: 10px 20px;
-	border-radius: 5px;
+#envoyer {
+	cursor: pointer;
+	padding: 5px;
+	margin-top: 28px;
+	margin-bottom: 20px;
+}
+footer {
+	text-align: center;
 	position: relative;
-	z-index: 4;
-	opacity: 0;
+	z-index: 1;
+	color: red;
+	padding-top: 50px;
+}
+h5 {
+	margin: 0 auto;
+	font-weight: 1000;
 }
 
 
 
 
+/* -------------pour smartphone------------ */
+@media screen and (max-width: 768px){
+
+	h1 {
+		font-size: 1.5em;
+	}
+	h2 {
+		font-size: 1.5em;
+		text-align: center;
+	}
+	h3 {
+		font-size: 1.2em;
+	}
+	a {
+		font-size: 1.2em;
+	}
+	nav {
+		display: none;
+		/*position: absolute;*/
+	}
+	.generalinfo {
+	max-width: 100%;
+	height: 550px;
+	.generalinfo>p {
+		font-size: 1.5em;
+	}
+	.floatIcon{
+		display: none;
+	}
+	.fa-bars{
+		color:red;
+	}
+	#dropMenu {
+		background-color: white;
+		opacity: 0.9;
+		display: hidden;
+		position: absolute;
+		z-index: 15;
+		border: 1px solid red;
+		border-radius: 5%;
+
+	}
+	#dropMenu ul {
+		padding-left: 20px;
+		padding-right: 20px;
+		text-align: center;
+	}
+	#dropMenu ul li {
+		list-style: none;
+	}
+	.h1 {
+		clear: both;
+	}
+	.service {
+		width: 100%;
+		margin: 0 auto;
+		display: block;
+	}
+
+
+}
 
 
