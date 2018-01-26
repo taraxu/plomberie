@@ -1,62 +1,73 @@
 body {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	font-family: 'Maven Pro', sans-serif;
 
 }
 a {
 	text-decoration: none;
-	font-size: 1.5em;
-	color: red;
+	font-size: 1.1em;
+	color: #FA4032;
 }
 a:hover {
-	color: #064579;
+	color: #333;
+}
+#logo {
+	
+	float: left;
+	max-width: 7%;
+	position: absolute;
+	top: 0;
+	z-index: 100;
+	text-align: center;
+	
+}
+#logo img {
+	background-color: #FA4032;
+	padding: 10px 15px;
+	border-radius: 100%;
+}
+#logo>p {
+	color: #FA4032;
+	margin: 0;
 }
 nav {
-	background-color: red;
-	text-align: center;
-	padding: 10px;
+	padding: 10px 2px;
 	position: fixed;
-	z-index: 10;
-	top: 0;
-	width: 100%;
+	top: 5px;
+	right: 20px;
 	height: auto;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    opacity: 0.8;
+    z-index: 50;
 
 }
 nav a {
+	background-color: #FA4032;
 	color: white;
-	margin: auto 5%;
+	padding:5px;
+	margin:0 5px;
+	border:1px solid #FA4032;
+	border-radius: 5px;
 }
 #fa-bars {
+	clear: both;
 	display: none;
 }
 #dropMenu {
+	clear: both;
 	display: none;
 }
 
 .generalinfo {
+	clear: both;
 	background-image: url(../instructions/background10.jpg);
 	width: 100%;
-	height: 1000px;
+	height: 800px;
 	text-align: center;
 	margin:0 auto;
 	position: fixed;
-	z-index: 0;
-	opacity: 0.8;
+	opacity: 0.9;
 	top: 0;
-}
-
-h1 {
-	font-size: 3em;
-	padding-top: 0;
-}
-.generalinfo>img {
-	max-width: 5%;
-	margin: 0 auto;
-	padding-top: 5%;
 }
 .generalinfo>p {
 	font-size: 2em;
@@ -69,9 +80,12 @@ h1 {
 	z-index: 1;
 }
 h2 {
-	text-align: left;
 	color: #aaaaaa;
-	padding-top: 30px;
+	margin-top: 30px;
+	padding: 10px;
+	border:1px solid #aaaaaa;
+	border-radius: 5px;
+	display: inline-block;
 }
 
 .floatIcon {
@@ -123,7 +137,7 @@ h2 {
 	left: 25%;
 	position:absolute;
 	padding: 10px;
-	color: #aaaaaa;
+	color: blue;
 
 }
 #stop {
@@ -132,7 +146,7 @@ h2 {
 	left: 25%;
 	position:absolute;
 	padding: 10px;
-	color: #162f42;
+	color: yellow;
 
 }
 h3 {
@@ -158,29 +172,39 @@ h3 {
 }
 
 form {
-	margin-bottom: 300px;
+	margin-bottom: 230px;
+	display: block;
 }
 input {
 	padding: 10px 20px 20px 5px;
-	margin: 10px auto;
+	margin:10px 5px;
 	border-radius: 5px;
+	display: block;
 }
-#envoyer {
+#send, #delete {
 	cursor: pointer;
 	padding: 5px;
 	margin-top: 28px;
 	margin-bottom: 20px;
 }
+#send {
+	background-color: #FA4032;
+	color: white
+}
+#delete {
+	background-color: grey;
+
+}
 footer {
 	text-align: center;
 	position: relative;
 	z-index: 1;
-	color: red;
-	padding-top: 50px;
+	color: #FA4032;
+	margin-bottom: 50px;
 }
 h5 {
 	margin: 0 auto;
-	font-weight: 1000;
+	font-size: 1em;
 }
 
 
@@ -202,30 +226,42 @@ h5 {
 	a {
 		font-size: 1.2em;
 	}
+	#logo {
+		display: none;
+	}
 	nav {
 		display: none;
 		/*position: absolute;*/
 	}
 	.generalinfo {
+	background-image: url(../instructions/background10respon.jpg);
 	max-width: 100%;
-	height: 550px;
+	height: auto;
+	position: absolute;
+
+	}
 	.generalinfo>p {
 		font-size: 1.5em;
 	}
 	.floatIcon{
 		display: none;
 	}
-	.fa-bars{
-		color:red;
+	#fa-bars{
+		display: block;
+		position: absolute;
+		z-index: 100;
+		color:#FA4032;
+		float: left;
 	}
 	#dropMenu {
 		background-color: white;
 		opacity: 0.9;
 		display: hidden;
 		position: absolute;
-		z-index: 15;
-		border: 1px solid red;
+		z-index: 50;
+		border: 1px solid #FA4032;
 		border-radius: 5%;
+		z-index: 40;
 
 	}
 	#dropMenu ul {

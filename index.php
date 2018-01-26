@@ -13,12 +13,16 @@
 </head>
 
 <body>
-    <header>
-        <nav>
+    <header>        
+        <div id="logo">
+            <img src="instructions/logo4.png" alt="logo">
+            <p>Mon plombier bien aimé</p>
+        </div>
+        <nav>       
             <a href="#">Accueil</a>
             <a href="#services">Nos services</a>
             <a href="#chantiers">Nos chantiers</a>
-            <a href="#contacts">Nous contacter</a>
+            <a href="#contacts">Nous contacter</a>   
         </nav>
         <div id="fa-bars"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></div>
         <div id="dropMenu">
@@ -30,10 +34,8 @@
             </ul>
         </div>
         <div class="generalinfo">
-            <img src="instructions/logo3.png">
-            <h1>Mon plombier bien aimé</h1>
-            <p>Devis gratuit</p>
-            <p>Par tél : 01 23 45 67 89</p>
+            <!--<p>Devis gratuit</p>
+            <p>Par tél : 01 23 45 67 89</p>!-->
         </div>
     </header>
     <main  class="maincontent">
@@ -44,7 +46,7 @@
         </div>
         <div>
         	<!-- sliders!-->
-            <h2><a href="chantiers.php" id="chantiers">Nos Chantiers</a></h2>
+            <h2 id="chantiers">Nos Chantiers</h2>
             <section>
                 <div id='hideAera'>
                     <p id="stop"><i class="fa fa-pause-circle-o fa-4x" aria-hidden="true"></i></p>
@@ -59,7 +61,7 @@
                 </div>          
             </section>
             <!-- flex !-->
-            <h2><a href="services.php" id="services">Nos Services</a></h2>
+            <h2 id="services">Nos Services</h2>
         	<section class="nosservices">
                 <div class="service">
                     <img src="instructions/service111.png">
@@ -89,14 +91,15 @@
                 </div>		
         	</section>
         	<!-- contact !-->
-            <h2><a href="contacts.php" id="contacts">Nous contacter</a></h2>
+            <h2 id="contacts">Nous contacter</h2>
             <form action="index.php" method="post">
-                <input type="text" name="firstname" placeholder="Prénom" required><br>
-                <input type="text" name="lastname" placeholder="Nom" required><br>
-                <input type="text" name="zipcode" placeholder="Code postal" pattern="[0-9]{5}"required><br>
-                <input type="mail" name="mail" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,5}$" required><br>
-                <textarea cols="100" rows="4" name="content" placeholder="Message" required></textarea><br>
-                <input id="envoyer" type="submit" value="Envoyer">
+                <input type="text" name="firstname" placeholder="Prénom" required>
+                <input type="text" name="lastname" placeholder="Nom" required>
+                <input type="text" name="zipcode" placeholder="Code postal" pattern="[0-9]{5}"required>
+                <input type="mail" name="mail" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,5}$" required>
+                <textarea cols="100" rows="4" name="content" placeholder="Message" required></textarea>
+                <input id="send" type="submit" value="Envoyer">
+                <input id= "delete" type="submit" value="Effacer">
             </form>
 
 
@@ -159,6 +162,6 @@
     		<h5>Par tél : 01 23 45 67 89</h5>
     </footer>
     <script type="text/javascript" src="sliders.js"></script>
-    <script type="text/javascript" src="dropmenu.js"></script>
+    <script type="text/javascript" src="jq.js"></script>
 </body>
 </html>
