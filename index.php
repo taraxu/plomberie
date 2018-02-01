@@ -98,15 +98,17 @@
             <h2 id="contacts">-Nous <span>contacter</span>-</h2>
             <section id="contactform">
                 <form action="index.php" method="post" <form method="post" action="page.php" enctype="multipart/form-data"> 
-                    <input type="text" name="firstname" placeholder="Prénom" required>
+                    <!--<input type="text" name="firstname" placeholder="Prénom" required>
                     <input type="text" name="lastname" placeholder="Nom" required>
                     <input type="text" name="zipcode" placeholder="Code postal" pattern="[0-9]{5}"required>
                     <input type="mail" name="mail" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,5}$" required>
                     <textarea cols="80" rows="10" name="content" placeholder="Message" required></textarea>
-                    <p>Souhaitez-vous nous faire parvenir des photos?</p>
+                    <p>Souhaitez-vous nous faire parvenir des photos?</p>!-->
                     <input type="hidden" name="MAX_FILE_SIZE" value="2000000" >
                     <label for="picture">Type du fichier (JPG, PNG ou GIF | max 2M) :</label><br />
-                    <input type="file" name="picture">
+                    <input type="file" name="picture[]">
+                    <input type="file" name="picture[]">
+                    <input type="file" name="picture[]">
                     <input id="send" type="submit" value="Envoyer">
                     <input id= "delete" type="submit" value="Effacer">
                 </form>
