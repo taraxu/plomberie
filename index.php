@@ -97,68 +97,126 @@
         	<!-- contact !-->
             <h2 id="contacts">-Nous <span>contacter</span>-</h2>
             <section id="contactform">
-                <form action="index.php" method="post" <form method="post" action="page.php" enctype="multipart/form-data">
-> 
+                <form action="index.php" method="post" <form method="post" action="page.php" enctype="multipart/form-data"> 
                     <input type="text" name="firstname" placeholder="Prénom" required>
                     <input type="text" name="lastname" placeholder="Nom" required>
                     <input type="text" name="zipcode" placeholder="Code postal" pattern="[0-9]{5}"required>
                     <input type="mail" name="mail" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,5}$" required>
                     <textarea cols="80" rows="10" name="content" placeholder="Message" required></textarea>
-                    Souhaitez-vous nous faire parvenir une photo ?<input type="file" name="picture"> 
+                    <p>Souhaitez-vous nous faire parvenir des photos?</p>
+                    <input type="hidden" name="MAX_FILE_SIZE" value="2000000" >
+                    <label for="picture">Type du fichier (JPG, PNG ou GIF | max 2M) :</label><br />
+                    <input type="file" name="picture">
                     <input id="send" type="submit" value="Envoyer">
                     <input id= "delete" type="submit" value="Effacer">
                 </form>
 
 
-                <?php
-                try
-                {
-                    $bdd = new PDO('mysql:host=localhost;dbname=Plomberie;charset=utf8', 'root', 'root');
-                }
-                catch(Exception $e)
-                {
-                    die('Erreur : '.$e->getMessage());
-                }
-                    if(count($_POST) >0 ) {
-                        //var_dump($_POST);
+<?php
+try
+{
+    $bdd = new PDO('mysql:host=localhost;dbname=Plomberie;charset=utf8', 'root', 'root');
+}
+catch(Exception $e)
+{
+    die('Erreur : '.$e->getMessage());
+}
+    if(count($_POST) >0 ) {
+        //var_dump($_POST);
 
-                        //Traiter le formulaire...
+        //Traiter le formulaire...
 
-                        //inserer les infos dans la table "writers" pour générer la "writer_id "
-                        if (is_array($_POST)) {
-                            $result3 = $bdd->prepare('INSERT INTO writers (firstname, lastname, zipcode, mail) VALUES(?, ?, ?, ?)');
-                            $donnes3 = $result3->execute(array($_POST['firstname'], $_POST['lastname'], $_POST['zipcode'], $_POST['mail']));
+        //inserer les infos dans la table "writers" pour générer la "writer_id "
+        if (is_array($_POST)) {
+            $result3 = $bdd->prepare('INSERT INTO writers (firstname, lastname, zipcode, mail) VALUES(?, ?, ?, ?)');
+            $donnes3 = $result3->execute(array($_POST['firstname'], $_POST['lastname'], $_POST['zipcode'], $_POST['mail']));
 
-                            //var_dump($donnes3);
-
-
-                        //Capter la "writer_id"
-                            $mail = $_POST['mail'];
-                            $result2 = $bdd->prepare("SELECT writer_id FROM writers WHERE mail = '$mail'");
-                            //var_dump($mail);
-                            $result2->execute();
-                            $donnes2 = $result2->fetch();
-                            //var_dump($donnes2);
-
-                            foreach ($donnes2 as $k => $v){
-                               // echo $v;
-                            }
-                            $writer_idvalue = intval($v);
-                            //var_dump($writer_idvalue);
-
-                        //inserer les infos dans la table "messages" avec la "writer_id"
-                            $result = $bdd->prepare('INSERT INTO messages (content, writer_id) VALUES(?, ?)');
-                            $donnes = $result->execute(array($_POST['content'], $writer_idvalue));
-
-                            //var_dump($writer_idvalue);
-                            //var_dump($_POST['content']);
-                            //var_dump($donnes);
+            //var_dump($donnes3);
 
 
-                            //header('Location: ./');
-                       }
-                    }
+        //Capter la "writer_id"
+            $mail = $_POST['mail'];
+            $result2 = $bdd->prepare("SELECT writer_id FROM writers WHERE mail = '$mail'");
+            //var_dump($mail);
+            $result2->execute();
+            $donnes2 = $result2->fetch();
+            //var_dump($donnes2);
+
+            foreach ($donnes2 as $k => $v){
+               // echo $v;
+            }
+            $writer_idvalue = intval($v);
+            //var_dump($writer_idvalue);
+
+        //inserer les infos dans la table "messages" avec la "writer_id"
+            $result = $bdd->prepare('INSERT INTO messages (content, writer_id) VALUES(?, ?)');
+            $donnes = $result->execute(array($_POST['content'], $writer_idvalue));
+
+            //var_dump($writer_idvalue);
+            //var_dump($_POST['content']);
+            //var_dump($donnes);
+
+
+            //header('Location: ./');
+       }
+    }
+
+// control upload event errors by creating an errorMessage variable
+switch($_FILES['picture']['error']) {
+    // - check if no file were uploaded
+    case UPLOAD_ERR_NO_FILE:
+        header('Location: ./');
+        break;
+    // - check the content type
+    case UPLOAD_ERR_EXTENSION:
+        ?>
+        <script language="javascript">
+            alert("Que de l'image est autorisée");
+        </script>
+        <?php
+        break;
+    // - check the upload max size limit
+    case UPLOAD_ERR_FORM_SIZE:
+        ?>
+        <script language="javascript">
+            alert("le fichier est trop gros");
+        </script>
+        <?php
+    // if all went fine ===>
+    case UPLOAD_ERR_OK:
+        $extension_valides = ['jpg', 'jpeg', 'png', 'gif'];
+        $extension_upload = strtolower(substr(strrchr($_FILES['picture']['name'], '.'), 1));
+        //var_dump($extension_upload);
+        if (in_array($extension_upload, $extension_valides)) {
+            $pictureUniqueName = uniqid(rand(), true) . '.'.$extension_upload;
+            //var_dump($pictureUniqueName);
+            $resultUpload = move_uploaded_file($_FILES['picture']['tmp_name'], 'upload/' . $pictureUniqueName);
+            //var_dump($resultUpload);
+            if ($resultUpload) {
+                //var_dump($_FILES['picture']['size']);
                 ?>
+                <script language="JavaScript">
+                    alert("Transfert réussi")
+                </script>
+                <?php
+            }else {
+                ?>
+                <script language="JavaScript">
+                    alert("Transfert n'est pas réussi, merci de ressayer")
+                </script>
+                <?php
+              }
+        }else{
+            //var_dump($extension_upload);
+            ?>
+            <script language="JavaScript">
+                alert("Que de l'image est autorisée")
+            </script>
+            <?php
+        }
+        break;
+}
+?>
                 <div id="googlemap">
                     <h4>Mon plombier bien aimé</h4>
                     <p>Sur la metropolilloise</p>
