@@ -174,8 +174,8 @@ form {
 	display: block;
 }
 input {
-	padding: 10px 20px 20px 5px;
-	margin:10px 5px;
+	padding: 10px 20px 10px 5px;
+	margin:5px 5px;
 	border-radius: 5px;
 	display: block;
 }
@@ -214,13 +214,15 @@ footer {
 	text-align: center;
 	position: relative;
 	z-index: 1;
-	color: #FA4032;
-	margin-bottom: 50px;
+	color: whitesmoke;
+	border:1px solid #FA4032;
+	background-color: #FA4032;
+	display: inline-block;
+	padding:10px auto;
+	margin:0 auto;
+
 }
-h5 {
-	margin: 0 auto;
-	font-size: 1em;
-}
+
 
 
 
