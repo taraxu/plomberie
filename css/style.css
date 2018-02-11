@@ -13,32 +13,42 @@ a {
 a:hover {
 	color: #333;
 }
-#logo {
-	
-	float: left;
-	max-width: 7%;
-	position: absolute;
-	top: 0;
-	z-index: 100;
+#menu {
+	display: flex;
+	justify-content: space-between;
 	text-align: center;
+}
+#logo {
+	display: flex;
+	justify-content: space-between;
+
+	/*position: relative;
+	top: 0;
+	z-index: 100;*/
+
 	
 }
 #logo img {
 	background-color: #ec462f;
 	padding: 10px 15px;
 	border-radius: 100%;
+	max-width: 7%;
 }
-#logo>p {
+#generalinfo p{
 	color: red;
+	padding:0;
 	margin: 0;
 }
 nav {
 	padding: 10px 2px;
-	position: fixed;
+	position: relative;
+	/*clear: both;
+	float: right;
+	display: inline-block;
 	top: 15px;
-	right: 20px;
+	right: 20px;*/
 	height: auto;
-    z-index: 50;
+    /*z-index: 50;*/
 
 }
 nav a {
@@ -58,14 +68,13 @@ nav a {
 	display: none;
 }
 
-.generalinfo {
+#backgroundimg {
 	background-image: url(../instructions/background11.jpg);
 	width: 100%;
-	height: 800px;
+	height: 750px;
 	text-align: center;
 	margin:0 auto;
 	position: fixed;
-	top: 0;
 }
 .generalinfo>p {
 	font-size: 2em;
@@ -207,7 +216,7 @@ form {
 	margin-left: 5px;
 }
 #house {
-	height: 200px;
+	height: 300px;
 	margin-bottom: 20px;
 }
 footer {
@@ -262,6 +271,7 @@ footer {
 		z-index: 50;
 		border: 1px solid #FA4032;
 		border-radius: 5%;
+
 	}
 	#dropMenu ul {
 		padding-left: 20px;
