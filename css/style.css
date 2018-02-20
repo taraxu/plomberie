@@ -3,12 +3,15 @@ body {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	font-family: 'Maven Pro', sans-serif;
-	background-color: #F7F7F7;
+	background-color: #f7f7f7;
+	font-size: 15px;
+	margin: 0;
+	padding: 0;
 }
 a {
 	text-decoration: none;
 	font-size: 1.1em;
-	color: red;
+	color: #ff0505;
 }
 a:hover {
 	color: #333;
@@ -21,42 +24,29 @@ a:hover {
 #logo {
 	display: flex;
 	justify-content: space-between;
-
-	/*position: relative;
-	top: 0;
-	z-index: 100;*/
-
-	
 }
 #logo img {
-	background-color: #ec462f;
-	padding: 10px 15px;
-	border-radius: 100%;
-	max-width: 7%;
+	width: 30%;
+	height: 90%;
+	padding-right:2%;
 }
-#generalinfo p{
-	color: red;
+#logo p{
+	text-align: left;
+	color: black;
 	padding:0;
 	margin: 0;
 }
 nav {
 	padding: 10px 2px;
 	position: relative;
-	/*clear: both;
-	float: right;
-	display: inline-block;
-	top: 15px;
-	right: 20px;*/
 	height: auto;
-    /*z-index: 50;*/
-
 }
 nav a {
-	background-color: red;
+	background-color: #ff0505;
 	color: white;
 	padding:5px;
 	margin:0 5px;
-	border:1px solid red;
+	border:1px solid #ff0505;
 	border-radius: 5px;
 }
 #fa-bars {
@@ -67,13 +57,11 @@ nav a {
 	clear: both;
 	display: none;
 }
-
 #backgroundimg {
-	background-image: url(../instructions/background11.jpg);
+	background-image: url(../instructions/background.png);
 	width: 100%;
-	height: 750px;
+	height: 650px;
 	text-align: center;
-	margin:0 auto;
 	position: fixed;
 }
 .generalinfo>p {
@@ -81,10 +69,11 @@ nav a {
 	margin: 0;
 }
 .maincontent {
-	margin-top: 31%;
+	margin-top: 27%;
 	background-color: #F7F7F7;
 	position:relative;
 	z-index: 1;
+	width:100%;
 }
 h2 {
 	color: #aaaaaa;
@@ -92,14 +81,10 @@ h2 {
 	margin-bottom: 10px;
 	padding: 10px;
 	font-size: 2.2em;
-	/*border:1px solid #aaaaaa;
-	border-radius: 5px;
-	display: inline-block;*/
 }
 span {
-	color: red;
+	color: #ff0505;
 }
-
 .floatIcon {
 	display: inline-block;
 	height: auto;
@@ -115,7 +100,6 @@ span {
 	width: 160px;
 }
 #slider {
-    /*width: 100%;*/
     height: 300px;
     overflow: hidden;
     position: relative;
@@ -132,7 +116,6 @@ span {
     padding:0;
     margin: 0;
 }
-
 #hideAera {
 	background-color: #F7F7F7;
 	width: 10%;
@@ -194,12 +177,12 @@ input {
 	margin-top: 28px;
 }
 #send {
-	background-color: #FA4032;
+	background-color: #ff0505;
 	color: white;
 }
 #delete {
 	background-color: white;
-	color: red;
+	color: #ff0505;
 }
 #contactform {
 	display: flex;
@@ -215,22 +198,20 @@ form {
 #googlemap button{
 	margin-left: 5px;
 }
+iframe {
+	width: 400px;
+	height: 300px;
+	frameborder: 0;
+	border: 0;
+}
 #house {
 	height: 300px;
 	margin-bottom: 20px;
 }
 footer {
-	text-align: center;
-	position: relative;
-	z-index: 1;
-	color: whitesmoke;
-	border:1px solid #FA4032;
-	background-color: #FA4032;
-	display: inline-block;
-	padding:10px auto;
-	margin:0 auto;
-
+	display: none
 }
+
 
 
 
@@ -239,7 +220,10 @@ footer {
 /* -------------pour phone et tablette------------ */
 @media screen and (max-width: 768px){
 
-	
+	body{
+		width: 95%;
+		margin:0 auto;
+	}
 	h2 {
 		font-size: 1.5em;
 		text-align: center;
@@ -251,44 +235,50 @@ footer {
 	a {
 		font-size: 1.2em;
 	}
+	#logo {
+		display: flex;
+		flex-direction: column;
+	}
+	#generalinfo{
+		margin-top:2%;
+	}
+	#logo img{
+		max-width: 30%;
+		height: 100%;
+	}
 	nav {
 		display: none;
-		/*position: absolute;*/
 	}
 	#fa-bars{
 		display: inline-block;
 		position: relative;
 		z-index: 100;
-		color:#FA4032;
+		color:#ff0505;
 		float: right;
-		vertical-align:top;
+		line-height: 0;
 	}
 	#dropMenu {
 		background-color: white;
 		opacity: 0.9;
-		display: hidden;
-		position: absolute;
+		display: none;
 		z-index: 50;
 		border: 1px solid #FA4032;
 		border-radius: 5%;
-
+		float: right;
 	}
 	#dropMenu ul {
-		padding-left: 20px;
-		padding-right: 20px;
+		padding-left: 10px;
+		padding-right: 10px;
 		text-align: center;
 	}
 	#dropMenu ul li {
 		list-style: none;
-	}
-	.generalinfo {
-		background-image: url(../instructions/backgroundrespon.png);
-		background-size: cover;
-		width: 100%;
-		height: 170px;
-		position: absolute;
+		font-weight: 300;
 	}
 	.floatIcon{
+		display: none;
+	}
+	#backgroundimg {
 		display: none;
 	}
 	.nosservices {
@@ -300,7 +290,6 @@ footer {
 	textarea {
 		width: 100%;
 	}
-
 	#send, #delete {
 		margin-top: 10px;
 	}
@@ -310,8 +299,12 @@ footer {
 	#contactform {
 		flex-direction: column;
 	}
+	iframe {
+		width: 100%;
+		height: auto;
+	}
 	#house{
-		display: none;
+		height: 10%;
 	}
 }
 
