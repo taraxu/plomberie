@@ -25,10 +25,17 @@ a:hover {
 	display: flex;
 	justify-content: space-between;
 }
+#generalinfo{
+	margin-top: 4%;
+}
+#logo ul{
+	list-style: none;
+}
 #logo img {
-	width: 30%;
+	width: 50%;
 	height: 90%;
 	padding-right:2%;
+	margin-left:1%;
 }
 #logo p{
 	text-align: left;
@@ -198,7 +205,12 @@ form {
 #googlemap button{
 	margin-left: 5px;
 }
+h4 {
+	font-weight: bold;
+	margin: 0;
+}
 iframe {
+	margin-top:10%;
 	width: 400px;
 	height: 300px;
 	frameborder: 0;
@@ -261,14 +273,16 @@ footer {
 		background-color: white;
 		opacity: 0.9;
 		display: none;
-		z-index: 50;
-		border: 1px solid #FA4032;
-		border-radius: 5%;
+		position: relative;
+		z-index: 1000;
+
+		border-radius: 5px;
 		float: right;
 	}
 	#dropMenu ul {
 		padding-left: 10px;
 		padding-right: 10px;
+		margin: 0;
 		text-align: center;
 	}
 	#dropMenu ul li {
