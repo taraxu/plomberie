@@ -1,13 +1,9 @@
 <?php
 
+//connexion des BDD
 try
 {
-    $bdd = new PDO
-    (
-        'mysql:host=localhost8889; bdname=Plomberie; charset=UTF8',
-        'root',
-        'root'
-    );
+    $bdd = new PDO('mysql:host=localhost;dbname=Plomberie;charset=utf8', 'root', 'root');
 }
 catch(Exception $e)
 {
