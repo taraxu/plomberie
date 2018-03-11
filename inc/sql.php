@@ -3,11 +3,10 @@
 //connexion des BDD
 try
 {
-    $bdd = new PDO('mysql:host=localhost;dbname=Plomberie;charset=utf8', 'root', 'root');
+    $bdd = new PDO('mysql:host=monplombfbromain.mysql.db;dbname=monplombfbromain;charset=utf8','monplombfbromain','Romain59000');
 }
 catch(Exception $e)
 {
     die('Erreur : '.$e->getMessage());
 }
-
 ?>
