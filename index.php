@@ -4,9 +4,9 @@
     <meta charset="utf-8" lang="fr">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <title>monplombierbienaime</title>
+    <title>Plombier Lille Lambersart Lomme</title>
     <meta name="keywords" content="plombier, lille, aménagement, salle de bain, cuisine, dépaneur, fuite d'eau, nord, chauffage, installation, cumulus, VMC ventilation" />
-    <meta name="description"  content="dépanage plomberie et aménagement salle de bain et cuisine" />
+    <meta name="description"  content="recherche de fuite, aménagement salle de bain et cuisine à lille lambersart et lomme" />
     <meta name="robots" content="index,follow" />
     <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
@@ -25,7 +25,7 @@
             </ul>
             <ul id="generalinfo">
                 <li>Demandez un devis gratuit</li>
-                <li><a href="tel:+33668964817"><i class="fas fa-mobile-alt fa-fw"></i><button>06 68 96 48 17</button></a></li>
+                <li><i class="fas fa-mobile-alt fa-fw"></i><a href="tel:+33668964817">06 68 96 48 17</a></li>
                 <li><i class="far fa-envelope fa-fw"></i> monplombierbienaime@gmail.com</li>
             </ul>
         </div>
@@ -35,21 +35,13 @@
             <a href="#chantiers">Nos chantiers</a>
             <a href="#contacts">Nous contacter</a>
         </nav>
-        <!--<div id="fa-bars">
-            <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
-            <p>menu</p>
-        </div>!-->
     </div>
-    <!--<div id="dropMenu">
-        <ul>
-            <li><a href="#services">Nos services</a></li>
-            <li><a href="#chantiers">Nos chantiers</a></li>
-            <li><a href="#contacts">Nous contacter</a></li>
-        </ul>
-    </div>!-->
     <div id="backgroundimg">
+        <div class="postshow-overlay"></div>
+        <h1>- Plombier Lille Lambersart Lomme -</h1>
     </div>
 </header>
+
 <main  class="maincontent">
     <!--<div class="floatIcon">
         <a href="#contacts">
@@ -61,9 +53,9 @@
     <div>
         <!-- Services !-->
         <h2 id="services">- Nos <span>Services</span>-</h2>
-        <section class="nosservices">
+        <section id="nosservices">
             <div class="service">
-                <img src="instructions/service1.png">
+                <img src="instructions/plombier.jpg" alt="plombier">
                 <h3><span>Plomberie</span></h3>
                 <ul>
                     <li>Dépannage plomberie</li>
@@ -72,22 +64,30 @@
                 </ul>
             </div>
             <div class="service">
-                <img src="instructions/service2.png">
+                <img src="instructions/chauffage.jpg" alt="chauffage">
                 <h3><span>Chauffage</span></h3>
                 <ul>
                     <li>Installation et remplacement de chaudière</li>
-                    <li>Installation de chauffage central(radiateur et plancher chauffant)</li>
+                    <li>Installation de chauffage central (radiateur et plancher chauffant)</li>
                 </ul>
             </div>
             <div class="service">
-                <img src="instructions/service3.png">
-                <h3><span>Ventilation</span></h3>
+                <img src="instructions/traitement%20d'air.jpg" alt="traitement d'air">
+                <h3><span>Traitement d'air</span></h3>
                 <ul>
-                    <li>Ventilation(double flux)</li>
-                    <li>Traitement d'air</li>
-                    <li>Climatisation</li>
+                    <li>Ventilation (double flux)</li>
+                    <li>Système Désenfumage</li>
                 </ul>
             </div>
+            <div class="service">
+                <img src="instructions/climatisation.jpg" alt="climatisation">
+                <h3><span>Climatisation</span></h3>
+                <ul>
+                    <li>Installation de système climatique</li>
+                    <li>Climatisation réversible (Chaud/froid)</li>
+                </ul>
+            </div>
+
         </section>
         <!-- sliders!-->
         <h2 id="chantiers">- Nos <span>Chantiers</span>-</h2>
@@ -114,12 +114,12 @@
         <h2 id="contacts">- Nous <span>contacter</span>-</h2>
         <section id="contactform">
             <div id="formPart">
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="#" method="post" enctype="multipart/form-data">
                     <p>Les champs avec * sont obligatoires</p>
                     <input type="text" name="firstname" placeholder="Prénom *" required>
                     <input type="text" name="lastname" placeholder="Nom *" required>
-                    <input type="text" name="zipcode" placeholder="Code postal *" pattern="[0-9]{5}"required>
-                    <input type="mail" name="mail" placeholder="Email *" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                    <input type="text" name="zipcode" placeholder="Code postal *" pattern="[0-9]{5}" required >
+                    <input type="email" name="mail" placeholder="Email *" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
                     <textarea cols="80" rows="10" name="content" placeholder="Message *" required></textarea>
                     <p>Souhaitez-vous nous faire parvenir des photos?</p>
                     <p>Formats acceptés (JPG, PNG ou GIF | taille de chaque photo max 2Mo) :</p>
@@ -134,15 +134,23 @@
 
                 <?php
                 //connexion of BDD
-                try
+                /*try
                 {
                     $bdd = new PDO('mysql:host=monplombfbromain.mysql.db;dbname=monplombfbromain;charset=utf8','monplombfbromain','Romain59000');
                 }
                 catch(Exception $e)
                 {
                     die('Erreur : '.$e->getMessage());
-                }
+                }*/
 
+                try
+                {
+                    $bdd = new PDO('mysql:host=localhost; dbname=Plomberie; charset=utf8', 'root', 'root');
+                }
+                catch(Exception $e)
+                {
+                    die('Erreur : '.$e->getMessage());
+                }
 
 
                 //Form-trait
@@ -223,16 +231,16 @@
                 if(isset($_POST['submit'])){
                     if(!empty($uploadFile)){
                         $mailMsg = 'Vous avez reçu un nouveau message de: ' . "\n"
-                            . 'Prénom: ' . $_POST['lastname'] . "\n"
-                            . 'Nom: ' . $_POST['firstname'] . "\n"
+                            . 'Prénom: ' . $_POST['firstname'] . "\n"
+                            . 'Nom: ' . $_POST['lastname'] . "\n"
                             . 'Email: ' . $_POST['mail'] . "\n"
                             . 'Photo:' . "oui" . "\n"
                             . 'Message: ' . $_POST['content'] ;
                         mail('yangxumailbox@gmail.com', 'Message du site Mon plombier bien aime', $mailMsg);
                     }else{
                         $mailMsg = 'Vous avez reçu un nouveau message de: ' . "\n"
-                            . 'Prénom: ' . $_POST['lastname'] . "\n"
-                            . 'Nom: ' . $_POST['firstname'] . "\n"
+                            . 'Prénom: ' . $_POST['firstname'] . "\n"
+                            . 'Nom: ' . $_POST['lastname'] . "\n"
                             . 'Email: ' . $_POST['mail'] . "\n"
                             . 'Photo:' . "non" . "\n"
                             . 'Message: ' . $_POST['content'] ;
@@ -248,7 +256,7 @@
                     <li>Sur la métropole lilloise(Lille, Lambersart, Lomme...)</li>
                 </ul>
                 <h4><span>Devis gratuit</span></h4>
-                <h4><a href="tel:+33668964817"><i class="fas fa-mobile-alt fa-fw"></i><button>06 68 96 48 17</button></a>
+                <h4><i class="fas fa-mobile-alt fa-fw"></i><a href="tel:+33668964817">06 68 96 48 17</a>
                 </h4>
                 <h4><i class="far fa-envelope fa-fw"></i> monplombierbienaime@gmail.com</h4>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d80985.23059984011!2d2.977120874675211!3d50.631046507693576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2d579b3256e11%3A0x40af13e81646360!2sLille!5e0!3m2!1sfr!2sfr!4v1517229394277"  allowfullscreen></iframe>

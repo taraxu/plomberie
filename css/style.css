@@ -14,25 +14,20 @@ a {
 a:hover {
 	color: #333;
 }
-button{
-	font-size: 0.8em;
-	padding:5px auto;
-	background-color: white;
-	border-radius: 5px;
-}
 span {
 	color: #ff0505;
+	margin: 2px;
 }
 h2 {
 	color: #505050;
-	margin: 30px auto 10px;
-	padding:20px 0 10px 20px;
+	margin: 0 auto 10px;
+	padding: 30px 0 10px 20px;
 	font-size: 2.2em;
 }
 h2 span {
 	color: #ff0505;
 }
-h3 span{
+h3 span {
 	font-size: 2em;
 	color: #58c5a8;
 }
@@ -41,108 +36,106 @@ h3 span{
 	justify-content: space-around;
 	text-align: center;
 }
+#generalinfo a, #googlemap a {
+	font-size: 0.8em;
+	color: black;
+	padding: 2px;
+	margin: 2px;
+	border: 1px solid #aaaaaa;
+	border-radius: 5px;
+	background-color: white;
+	box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+}
 #logo {
 	display: flex;
 	justify-content: space-around;
 }
-#logo span{
+#logo span {
 	color: white;
 	border:1px solid #505050;
 	background-color: #505050;
-	padding:5px;
+	padding: 5px;
 }
-#logo ul, #googlemap ul{
+#logo ul, #googlemap ul {
 	list-style: none;
-	padding:0;
+	padding: 0;
 }
 #logo img, #googlemap img {
 	width: 50%;
 	height: 90%;
 }
-#generalinfo{
-	margin-top:40px;
+#generalinfo {
+	margin-top: 40px;
 }
-#generalinfo li{
+#generalinfo li {
 	text-align: left;
 	list-style: none;
-	padding:0;
-	margin:0;
+	padding: 0;
+	margin: 0;
 }
-.fa-mobile-alt, .fa-envelope{
+.fa-mobile-alt, .fa-envelope {
 	color: #58c5a8;
 	padding-right: 5px;
 }
 nav {
+	display: flex;
 	padding-left: 2px;
-	position: relative;
-	margin-top: 65px;
+	margin-top: 85px;
+	margin-bottom: 5px;
 }
 nav a {
 	background-color: #ff0505;
 	color: white;
-	padding:5px;
-	margin:0 5px;
-	border:1px solid #ff0505;
-	border-radius: 5px;
+	padding: 5px;
+	margin: 0 5px;
+	border: 1px solid #ff0505;
+	border-radius: 4px;
 }
-/*#fa-bars {
-	clear: both;
-	display: none;
-}
-#dropMenu {
-	clear: both;
-	display: none;
-}*/
 #backgroundimg {
-	background-image: url(../instructions/background.png);
+	background-image: url(../instructions/background.jpg);
+	min-height: 700px;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.postshow-overlay {
+	position: absolute;
 	width: 100%;
-	height: 670px;
+	height: 100%;
+	background-color: rgba(36, 36, 36, 0.4);
+}
+h1 {
+	color: white;
+	font-size: 60px;
+	position: absolute;
 	text-align: center;
-	position: fixed;
+	left: 10%;
+	margin: 300px 100px 180px;
 }
 .maincontent {
-	margin-top: 350px;
+	/*margin-top: 350px;*/
 	background-color: #F7F7F7;
-	position:relative;
-	z-index: 1;
+	position: relative;
+	z-index: 4;
 }
-/*.floatIcon {
-	display: inline-block;
-	text-align: center;
-	position: fixed;
-	right: 5px;
-	bottom: 5px;
-	z-index: 15;
-	border:1px solid red;
-	background-color: red;
-	border-radius: 5px;
-	padding:5px;
-	opacity: 0.8;
-}
-.fa-comment-alt {
-	color: white;
-}
-.floatIcon p {
-	font-size: 0.8em;
-	color: white;
-	margin: 0;
-}*/
-.nosservices {
+#nosservices {
 	display: flex;
-	flex-direction: row;
-	justify-content: center;
+	justify-content: space-between;
 }
 .service {
+	width: 22%;
 	margin: 20px 20px 10px;
 	text-align: center;
 }
 .service img {
-	border:1px solid #aaaaaa;
+	border: 1px solid #aaaaaa;
 	border-radius: 100%;
 	padding: 5px;
 }
 .service ul li {
 	text-align: left;
+	margin-left: 14%;
 }
 #slider {
 	height: 400px;
@@ -174,7 +167,7 @@ nav a {
 	border: transparent;
 	top: 15%;
 	left: 25%;
-	position:absolute;
+	position: absolute;
 	padding: 10px;
 	color: #58c5a8;
 }
@@ -182,7 +175,7 @@ nav a {
 	border: transparent;
 	top: 60%;
 	left: 25%;
-	position:absolute;
+	position: absolute;
 	padding: 10px;
 	color: yellow;
 }
@@ -198,25 +191,25 @@ form {
 }
 input {
 	padding: 10px 20px 10px 5px;
-	margin:5px 5px;
+	margin: 5px 5px;
 	border-radius: 5px;
 	display: block;
 }
-#send{
+#send {
 	cursor: pointer;
 	padding: 5px;
 	margin-top: 28px;
 	background-color: #ff0505;
 	color: white;
 }
-#formPart>p{
-	margin-left:10px;
+#formPart>p {
+	margin-left: 10px;
 	color: red;
 }
 #googlemap {
 	margin: 10px;
 }
-#googlemap button{
+#googlemap button {
 	margin-left: 5px;
 }
 h4 {
@@ -224,15 +217,14 @@ h4 {
 	margin: 0;
 }
 iframe {
-	margin-top:70px;
+	margin-top: 70px;
 	width: 450px;
 	height: 350px;
 	frameborder: 0;
 	border: 0;
 }
 #house {
-	height: 300px;
-	margin-bottom: 20px;
+	height: 30px;
 }
 
 
@@ -244,27 +236,26 @@ iframe {
 /* -------------pour phone et tablette------------ */
 @media screen and (max-width: 768px){
 
-	body{
-		width: 95%;
-		margin:0 auto;
+	body {
+		margin: 0 auto;
 	}
 	h2 {
 		text-align: center;
 		border-top: 1px dotted #58c5a8;
-		border-left:1px dotted #58c5a8 ;
+		border-left: 1px dotted #58c5a8 ;
 		padding-top: 0;
 		font-size: 2em;
 	}
-	h3 span{
+	h3 span {
 		font-size: 1.2em;
 		color: white;
 		border: 1px solid #58c5a8;
 		border-radius: 5px;
-		padding:5px;
+		padding: 5px;
 		margin-top: 0;
 		background-color: #58c5a8;
 	}
-	#menu{
+	#menu {
 		background-color: white;
 		display: flex;
 		flex-direction: column;
@@ -277,63 +268,42 @@ iframe {
 		max-width: 50%;
 		height: 100%;
 	}
-	#generalinfo{
-		margin:0 auto;
+	#generalinfo {
+		margin: 0 auto;
 	}
 	nav {
 		display: none;
 	}
-	/*#fa-bars{
-		display: block;
-		position: relative;
-		z-index: 100;
-		color:#ff0505;
-		line-height: 0;
-	}
-	#dropMenu {
-		background-color: white;
-		opacity: 0.9;
-		display: none;
-		position: relative;
-		z-index: 1000;
-		border-radius: 5px;
-	}
-	#dropMenu ul {
-		padding-left: 10px;
-		padding-right: 10px;
-		margin: 0;
-		text-align: center;
-	}
-	#dropMenu ul li {
-		list-style: none;
-		font-weight: 300;
-	}*/
-	.floatIcon{
-		display: none;
-	}
 	#backgroundimg {
-		display: none;
+		min-height: 200px;
+	}
+	.postshow-overlay {
+		height: 200px;
+	}
+	h1 {
+		color: white;
+		font-size: 2em;
+		position: absolute;
+		text-align: center;
+		left: 0;
+		margin: 50px 0;
 	}
 	.maincontent {
 		margin-top: 10px;
 	}
-	/*#services{
-		border-top: 1px dashed #58c5a8;
-		border-left:1px dashed #58c5a8;
-	}
-	#chantiers{
-		border-top: 1px dashed yellow;
-		border-left:1px dashed yellow;
-	}
-	#contacts{
-		border-top: 1px dashed blue;
-		border-left:1px dashed blue;
-	}*/
-	.nosservices {
+	#nosservices {
 		flex-direction: column;
 	}
 	.service {
-		margin: 20px auto;
+		width: 95%;
+		margin: 10px;
+	}
+	.service img {
+		max-width: 30%;
+	}
+	.service ul li {
+		text-align: justify;
+		margin: 10px auto;
 	}
 	#hideAera {
 		display: none;
@@ -351,8 +321,8 @@ iframe {
 		width: 100%;
 		height: auto;
 	}
-	#house{
-		height:20px;
+	#house {
+		height: 20px;
 	}
 }
 
