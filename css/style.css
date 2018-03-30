@@ -197,7 +197,6 @@ nav a {
 	position: relative;
 	z-index: 5;
 	margin-bottom: 50px;
-	margin-top: 10px;
 }
 #slider ul {
 	position: absolute;
@@ -208,32 +207,38 @@ nav a {
 	padding:0;
 	margin: 0;
 }
-#hideAera {
-	background-color: #F7F7F7;
-	width: 10%;
-	height: 400px;
-	left: 45%;
+#slider-overlay {
+	display: none;
+	position: absolute;
+	height: 375px;
+	width: 100%;
+	margin-top: 15px;
+	background-color: rgba(0, 0, 0, 0.45);
 	z-index: 6;
-	position: absolute;
-	opacity: 1;
-}
-#start {
-	border: transparent;
-	top: 15%;
-	left: 25%;
-	position: absolute;
-	padding: 10px;
-	color: #58c5a8;
 }
 #stop {
-	border: transparent;
-	top: 60%;
-	left: 25%;
+	top: 45%;
+	left: 50%;
 	position: absolute;
-	padding: 10px;
-	color: yellow;
+	margin:0;
+	color: #aaaaaa;
+	font-size: 3em;
+	font-weight: 700;
+	cursor: pointer;
 }
-
+#play {
+	display: none;
+	border: transparent;
+	top: 40%;
+	left: 50.5%;
+	position: absolute;
+	color: #aaaaaa;
+	font-size: 2em;
+	cursor: pointer;
+}
+#sliderResponsive {
+	display: none;
+}
 #contactform {
 	display: flex;
 	flex-direction: row;
@@ -384,8 +389,62 @@ iframe {
 		text-align: justify;
 		margin: 10px auto;
 	}
-	#hideAera {
+	#slider {
 		display: none;
+	}
+	#sliderResponsive {
+		width: 95%;
+		position: relative;
+		margin: auto;
+		display: block;
+		margin-bottom: 50px;
+	}
+	.sliderResImg {
+		display: none
+	}
+	.sliderResImg img {
+		vertical-align: middle;
+		width: 100%;
+	}
+	.prev, .next {
+		cursor: pointer;
+		position: absolute;
+		top: 50%;
+		width: auto;
+		padding: 10px 16px;
+		margin-top: -22px;
+		color: white;
+		font-weight: bold;
+		font-size: 18px;
+		transition: 0.6s ease;
+		border-radius: 50%;
+	}
+	.next {
+		right: 0;
+	}
+	.prev:hover, .next:hover {
+		background-color: rgba(0,0,0,0.5);
+	}
+	.numbertext {
+		color: white;
+		font-size: 12px;
+		padding: 8px 12px;
+		position: absolute;
+		top: 0;
+	}
+	.fade {
+		-webkit-animation-name: fade;
+		-webkit-animation-duration: 1.5s;
+		animation-name: fade;
+		animation-duration: 1.5s;
+	}
+	@-webkit-keyframes fade {
+		from {opacity: .4}
+		to {opacity: 1}
+	}
+	@keyframes fade {
+		from {opacity: .4}
+		to {opacity: 1}
 	}
 	input, textarea{
 		padding: 10px 0 10px 2px;

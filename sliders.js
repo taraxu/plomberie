@@ -1,3 +1,4 @@
+// slider for screen version
 var sliderMove;
 
 //creer function startSlider
@@ -25,8 +26,32 @@ window.onload=function(){
     startSlider();
 };
 
-//appeler la function startSlider quand clicker'start'
-document.getElementById('start').addEventListener('click', startSlider);
+//appeler la function startSlider quand clicker'play'
+document.getElementById('play').addEventListener('click', startSlider);
+
+
+
+
+//slider for responsive version
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("sliderResImg");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[slideIndex-1].style.display = "block";
+}
 
 
 
