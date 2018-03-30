@@ -9,13 +9,13 @@
     <meta name="description"  content="recherche de fuite, aménagement salle de bain et cuisine à lille lambersart et lomme" />
     <meta name="robots" content="index,follow" />
     <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
     <link rel="icon" type="image/x-icon" href="instructions/favicon.ico"/>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
-<body>
 <header>
     <div id="menu">
         <div id="logo">
@@ -23,10 +23,10 @@
                 <li><img src="instructions/logo.png" alt="logo"></li>
                 <li><span>Sur la métropole lilloise</span></li>
             </ul>
-            <ul id="generalinfo">
+            <ul class="generalinfo">
                 <li>Demandez un devis gratuit</li>
-                <li><i class="fas fa-mobile-alt fa-fw"></i><a href="tel:+33668964817">06 68 96 48 17</a></li>
-                <li><i class="far fa-envelope fa-fw"></i> monplombierbienaime@gmail.com</li>
+                <li><i class="fas fa-mobile-alt fa-fw"></i><a href="tel:+33668964817" class="mobile">06 68 96 48 17</a></li>
+                <li><i class="far fa-envelope fa-fw"></i><a href="mailto:monplombierbienaime@gmail.com" class="mail">monplombierbienaime@gmail.com</a></li>
             </ul>
         </div>
         <nav>
@@ -37,19 +37,20 @@
         </nav>
     </div>
     <div id="backgroundimg">
-        <div class="postshow-overlay"></div>
-        <h1>- Plombier Lille Lambersart Lomme -</h1>
+        <div id="postshow-overlay">
+            <div id="addres">
+                <h3> Plombier </h3>
+                <h1> Lille Lambersart Lomme</h1>
+                <div id="mouse">
+                    <span></span>
+                </div>
+            </div>
+        </div>
     </div>
+
 </header>
 
 <main  class="maincontent">
-    <!--<div class="floatIcon">
-        <a href="#contacts">
-            <i class="fal fa-comment-alt"></i>
-            <p>Envoyer</p>
-            <p>un message</p>
-        </a>
-    </div>!-->
     <div>
         <!-- Services !-->
         <h2 id="services">- Nos <span>Services</span>-</h2>
@@ -120,7 +121,7 @@
                     <input type="text" name="lastname" placeholder="Nom *" required>
                     <input type="text" name="zipcode" placeholder="Code postal *" pattern="[0-9]{5}" required >
                     <input type="email" name="mail" placeholder="Email *" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
-                    <textarea cols="80" rows="10" name="content" placeholder="Message *" required></textarea>
+                    <textarea cols="60" rows="10" name="content" placeholder="Message *" required></textarea>
                     <p>Souhaitez-vous nous faire parvenir des photos?</p>
                     <p>Formats acceptés (JPG, PNG ou GIF | taille de chaque photo max 2Mo) :</p>
                     <input type="hidden" name="MAX_FILE_SIZE" value="2000000" ><!-- 2M de chaque photo !-->
@@ -134,23 +135,23 @@
 
                 <?php
                 //connexion of BDD
-                /*try
+                try
                 {
                     $bdd = new PDO('mysql:host=monplombfbromain.mysql.db;dbname=monplombfbromain;charset=utf8','monplombfbromain','Romain59000');
                 }
                 catch(Exception $e)
                 {
                     die('Erreur : '.$e->getMessage());
-                }*/
+                }
 
-                try
+                /*try
                 {
                     $bdd = new PDO('mysql:host=localhost; dbname=Plomberie; charset=utf8', 'root', 'root');
                 }
                 catch(Exception $e)
                 {
                     die('Erreur : '.$e->getMessage());
-                }
+                }*/
 
 
                 //Form-trait
@@ -253,12 +254,13 @@
             <div id="googlemap">
                 <ul>
                     <li><img src="instructions/logo.png" alt="logo"></li>
-                    <li>Sur la métropole lilloise(Lille, Lambersart, Lomme...)</li>
+                    <li><span>Sur la métropole lilloise(Lille, Lambersart, Lomme...)</span></li>
                 </ul>
-                <h4><span>Devis gratuit</span></h4>
-                <h4><i class="fas fa-mobile-alt fa-fw"></i><a href="tel:+33668964817">06 68 96 48 17</a>
-                </h4>
-                <h4><i class="far fa-envelope fa-fw"></i> monplombierbienaime@gmail.com</h4>
+                <ul class="generalinfo">
+                    <li>Demandez un devis gratuit</li>
+                    <li><i class="fas fa-mobile-alt fa-fw"></i><a href="tel:+33668964817" class="mobile">06 68 96 48 17</a></li>
+                    <li><i class="far fa-envelope fa-fw"></i><a href="mailto:monplombierbienaime@gmail.com" class="mail">monplombierbienaime@gmail.com</a></li>
+                </ul>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d80985.23059984011!2d2.977120874675211!3d50.631046507693576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2d579b3256e11%3A0x40af13e81646360!2sLille!5e0!3m2!1sfr!2sfr!4v1517229394277"  allowfullscreen></iframe>
             </div>
         </section>

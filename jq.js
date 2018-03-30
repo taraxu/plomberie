@@ -1,8 +1,7 @@
 $(document).ready(function(){
-	$(".fa-bars").click(function(){
-		$("#dropMenu").fadeToggle(1000);
-	});
-
+	$("#mouse").mouseenter(function(){
+		$(this).animate({height:"5%"},500)
+	})
 	$(".service").mouseenter(function(){
 		$(this).animate({fontSize:"150%"},500)
 	});
