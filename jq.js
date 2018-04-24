@@ -1,11 +1,5 @@
 $(document).ready(function(){
-	/*$(".service").mouseenter(function(){
-		$(this).animate({fontSize:"150%"},500)
-	});
-
-	$(".service").mouseleave(function(){
-		$(this).animate({fontSize:"100%"},500)
-	});*/
+	//slider-overlay with play and stop effect
 	$("#slider").mouseenter(function(){
 		$("#slider-overlay").fadeIn(50);
 	});
@@ -20,4 +14,11 @@ $(document).ready(function(){
         $(this).hide();
         $("#stop").show();
     });
+
+    //mouse anchor
+   $("#mouse").click(function(){
+        var target = document.getElementById("services");
+        $('html, body').animate({scrollTop: $(target).offset().top}, 1000 );
+    });
+
 });

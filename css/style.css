@@ -25,8 +25,7 @@ h2 {
 	color: #505050;
 	padding: 30px 0 10px 20px;
 	font-size: 2.2em;
-	text-align: center
-;
+	text-align: center;
 }
 h2 span {
 	color: #ff0505;
@@ -67,10 +66,10 @@ h3 span {
 	padding: 0;
 }
 .mobile {
-	font-size: 0.8em;
+	font-size: 1em;
 	color: black;
 	padding: 2px 5px;
-	margin: 2px;
+	line-height: 1.5em;
 	border: 1px solid #aaaaaa;
 	border-radius: 5px;
 	box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
@@ -85,7 +84,6 @@ h3 span {
 }
 .mail:hover{
 	color: red;
-
 }
 .fa-mobile-alt, .fa-envelope {
 	color: #58c5a8;
@@ -107,13 +105,13 @@ nav a {
 }
 #postshow-overlay {
 	position: absolute;
-	min-height: 700px;
+	min-height: 1000px;
 	width: 100%;
 	background-color: rgba(0, 0, 0, 0.55);
 }
 #backgroundimg {
 	background-image: url(../instructions/background.jpg);
-	min-height: 700px;
+	min-height: 1000px;
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -121,7 +119,7 @@ nav a {
 }
 #addres {
 	position: absolute;
-	top: 45%;
+	top: 35%;
 	left: 20%;
 	right: 20%;
 	text-align: center;
@@ -152,7 +150,7 @@ nav a {
 	position: absolute;
 	left: 40%;
 	top:70%;
-	background: #fff;
+	background-color: #fff;
 	-webkit-animation: scroll .5s infinite alternate;
 	animation: scroll .5s infinite alternate;
 }
@@ -260,14 +258,6 @@ input, textarea{
 	border: 1px solid #E4E4E4;
 	font-weight: 100;
 }
-/*textarea {
-	font-size: 100%;
-	line-height: 1.15;
-	padding: 10px 0 10px 5px;
-	margin: 5px 0;
-	font-weight: 100;
-	border: 1px solid #E4E4E4;
-}*/
 #send {
 	cursor: pointer;
 	padding: 10px 25px;
@@ -293,10 +283,6 @@ iframe {
 	height: 350px;
 	border: 0;
 }
-#house {
-	height: 30px;
-}
-
 
 
 
@@ -348,6 +334,7 @@ iframe {
 		min-height: 200px;
 	}
 	#backgroundimg {
+		background-image: url(../instructions/background-res.jpg);
 		min-height: 200px;
 	}
 	#addres {
@@ -393,27 +380,25 @@ iframe {
 		display: none;
 	}
 	#sliderResponsive {
-		width: 95%;
 		position: relative;
-		margin: auto;
 		display: block;
-		margin-bottom: 50px;
 	}
-	.sliderResImg {
-		display: none
-	}
-	.sliderResImg img {
-		vertical-align: middle;
-		width: 100%;
+	#sliderResponsive img {
+		display: block;
+		width: 55%;
+		margin: 0 auto;
+		-webkit-animation-name: fade;
+		-webkit-animation-duration: 1.5s;
+		animation-name: fade;
+		animation-duration: 1.5s;
 	}
 	.prev, .next {
-		cursor: pointer;
 		position: absolute;
 		top: 50%;
 		width: auto;
 		padding: 10px 16px;
 		margin-top: -22px;
-		color: white;
+		color: black;
 		font-weight: bold;
 		font-size: 18px;
 		transition: 0.6s ease;
@@ -425,26 +410,29 @@ iframe {
 	.prev:hover, .next:hover {
 		background-color: rgba(0,0,0,0.5);
 	}
-	.numbertext {
-		color: white;
+	#numbertext {
+		color: black;
 		font-size: 12px;
 		padding: 8px 12px;
 		position: absolute;
 		top: 0;
 	}
-	.fade {
-		-webkit-animation-name: fade;
-		-webkit-animation-duration: 1.5s;
-		animation-name: fade;
-		animation-duration: 1.5s;
+	#sliderDots {
+		text-align: center;
+		margin-top: 15px;
+		margin-bottom: 50px;
 	}
-	@-webkit-keyframes fade {
-		from {opacity: .4}
-		to {opacity: 1}
+	.dot {
+		height: 10px;
+		width: 10px;
+		margin: 0 5px;
+		background-color: #bbb;
+		border-radius: 50%;
+		display: inline-block;
+		transition: background-color 0.6s ease;
 	}
-	@keyframes fade {
-		from {opacity: .4}
-		to {opacity: 1}
+	.active, .dot:hover {
+		background-color: #717171;
 	}
 	input, textarea{
 		padding: 10px 0 10px 2px;
@@ -469,9 +457,6 @@ iframe {
 	iframe {
 		width: 100%;
 		height: auto;
-	}
-	#house {
-		height: 20px;
 	}
 }
 
